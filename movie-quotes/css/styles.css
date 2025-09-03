@@ -1,0 +1,62 @@
+html {
+  background-color: rgb(246, 246, 246);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article {
+  max-width: 700px;
+}
+
+h1, h2 {
+  font-family: "cofo-raffine", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: #0e0e0e;
+  margin: 2px 0; 
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #0e0e0e;
+  margin-bottom: 20px;
+}
+
+.peter-venkman { color: #30608c; }
+.dana-barrett { color: #7c295d; }
+.mayor { color: #a34806; }
+.ray-stantz { color: #235137; }
+.egon-spengler { color: #342787; }
+.winston-zeddemore { color: #a06d2d; }
+.stage-direction {
+  color: #575858;
+  font-style: italic;
+}
+
+p {
+  font-family: "oculi-display", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 20px;
+}
+
+@media (max-width: 750px) {
+  article {
+    max-width: 550px;
+  }
+}
