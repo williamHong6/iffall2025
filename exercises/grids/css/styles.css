@@ -1,0 +1,48 @@
+/* Shared grid styles */
+.grid {
+  padding: 0;            /* remove default UL padding */
+  margin: 0;             /* keep edges tidy */
+  list-style: none;      /* remove bullets */
+}
+
+.grid img {
+  /* Start at 150px, then switch to percentage as instructed later */
+  width: 90%;
+  display: block;
+  margin: 0 auto;        /* center the image within the li */
+}
+
+.grid li {
+  display: block;        /* base block behavior for li */
+  width: 25%;            /* 4-up */
+  text-align: center;    /* center image and name */
+  font-size: 0.8rem;     /* avoid inheriting .using-inline-block font-size:0 */
+  margin-bottom: 1rem;
+}
+
+/* Inline-block technique */
+.using-inline-block {
+  font-size: 0;          /* remove whitespace gaps between inline-block items */
+}
+
+.using-inline-block li {
+  display: inline-block; /* the key to this technique */
+  vertical-align: top;   /* keep tops aligned nicely */
+}
+
+/* Flexbox technique */
+.using-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CSS Grid technique */
+.using-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal columns */
+}
+
+/* Override the shared li width for CSS Grid only */
+.using-grid li {
+  width: 100%;           /* fill its grid column */
+}
