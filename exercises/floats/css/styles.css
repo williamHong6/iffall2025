@@ -1,0 +1,10 @@
+/* Style for portrait images */
+.portrait {
+  float: left;
+  margin: 0 2rem 2rem 0;
+}
+
+/* Make sure instruction lists clear floats */
+.instructions {
+  clear: both;
+}
