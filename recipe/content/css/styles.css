@@ -1,0 +1,190 @@
+/* ---------- CSS RESET（简化版） ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+ol, ul { padding-left: 1.25rem; }
+
+/* ---------- 设计变量 ---------- */
+:root{
+  --bg: #fffdfa;
+  --ink: #1a1a1a;
+  --sub: #545b64;
+  --accent: #3366ff;
+  --accent-weak: #e7edff;
+  --card: #ffffff;
+  --line: #ececec;
+
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(0,0,0,.08);
+  --maxw: 900px;
+
+  --h1: clamp(2rem, 3vw, 3rem);
+  --h2: clamp(1.25rem, 1.8vw, 1.75rem);
+  --lead: clamp(1rem, 1.2vw, 1.125rem);
+}
+
+/* ---------- 全局排版 ---------- */
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter","Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  max-width: var(--maxw);
+}
+
+/* ---------- 页眉（强层级） ---------- */
+header {
+  margin-bottom: 28px;
+  position: relative;
+}
+header h1{
+  font-size: var(--h1);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+header h1::after{
+  content: "";
+  display: block;
+  width: 72px;
+  height: 6px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent) 0%, #8aa2ff 100%);
+}
+
+/* ---------- Section 基础 ---------- */
+section{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 20px;
+  margin: 18px 0;
+}
+
+section h2{
+  font-size: var(--h2);
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* 次级文字（辅助说明） */
+section p{
+  color: var(--sub);
+  font-size: var(--lead);
+  margin-bottom: 12px;
+}
+
+/* ---------- Ingredients（分类卡片 + 两列） ---------- */
+ul.ingredients{
+  list-style: none; /* 用自定义标记 */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px 16px;
+  margin-top: 10px;
+}
+
+ul.ingredients li{
+  background: var(--accent-weak);
+  border: 1px solid #dbe6ff;
+  border-radius: 10px;
+  padding: 10px 12px 10px 36px;
+  position: relative;
+  font-weight: 600; /* 数量更醒目 */
+}
+
+/* 打勾图标 */
+ul.ingredients li::before{
+  content: "✓";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px;
+  color: #fff;
+  background: var(--accent);
+}
+
+/* 大屏改两列 */
+@media (min-width: 720px){
+  ul.ingredients{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- 步骤列表（清晰层级 + 空白） ---------- */
+section ol{
+  counter-reset: step;
+  margin: 8px 0 10px 0;
+  list-style: none;
+}
+section ol li{
+  counter-increment: step;
+  padding-left: 42px;
+  margin: 10px 0;
+  position: relative;
+}
+section ol li::before{
+  content: counter(step);
+  position: absolute;
+  left: 0; top: 0.15rem;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  display: grid; place-items: center;
+}
+
+/* ---------- 图片（统一风格） ---------- */
+section > img{
+  margin-top: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- 步骤区块：图文网格（更强视觉层级） ---------- */
+/* 你的 HTML 每个 section 都是“文字 + 图片”，这里在较宽屏幕上做两栏 */
+@media (min-width: 880px){
+  body > section{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 18px 28px;
+    align-items: start;
+  }
+  /* 让图片自动占据右列（如果这个 section 里只有一张图片） */
+  body > section > img:last-child{
+    grid-column: 2;
+    grid-row: 1 / span 3; /* 让图和上面文字对齐更自然 */
+    align-self: start;
+  }
+  /* Ingredients 保持整块单列（不做左右两栏） */
+  body > section:first-of-type{
+    display: block;
+  }
+}
+
+/* ---------- 语义色与可访问性 ---------- */
+a{ color: var(--accent); text-underline-offset: 2px; }
+a:hover{ text-decoration: underline; }
+
+/* ---------- 细节微调 ---------- */
+section + section{ /* 区块之间更舒适的间距节奏 */
+  margin-top: 22px;
+}
+
+/* 让中英文混排更稳定（可以按需保留） */
+:where(p, li){
+  word-break: break-word;
+  text-wrap: pretty;
+}
