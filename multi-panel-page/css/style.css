@@ -13,12 +13,7 @@ body {
   
 }
 
-* { box-sizing: border-box; }
-
 .container {
-  /* max-width: 960px;
-  width: 100%;
-  margin: 0 auto; */
   width: 960px;
 }
 
@@ -70,7 +65,7 @@ body {
 .sec1{
   background: #517891;
   color: #ffffff;
-  /* opacity: 0.5; */
+  opacity: 0.5;
   display: flex;
   flex-direction: column;
   align-items: center;
