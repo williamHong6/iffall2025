@@ -1,0 +1,42 @@
+section .positioned-element {
+  width: 50px;
+  height: 50px;
+}
+
+.static-example .positioned-element {
+  background: green;
+  left: 100px;
+}
+
+.relative-example .positioned-element {
+  background: lightblue;
+  position: relative;
+  left: 100px;
+  top: 50px;
+  z-index: -1;
+}
+
+.absolute-example {
+  position: relative;
+}
+.absolute-example .positioned-element {
+  background: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.fixed-example .positioned-element {
+  background: purple;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.sticky-example .positioned-element {
+  background: orange;
+  position: sticky;
+  top: 50px;
+}
