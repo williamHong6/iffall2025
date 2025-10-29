@@ -1,0 +1,322 @@
+#btn_lyft {
+  color: #ff00bf;
+}
+#btn_lyft svg {
+  fill: currentColor;
+  transition: color .25s ease;
+}
+#btn_lyft:hover{
+  color: #000;
+}
+
+
+#btn_apple .icon {
+  fill: #111;
+  transition: fill 0.2s ease;
+}
+
+#btn_apple .apple-shape {
+  transition: filter 0.2s ease;
+}
+
+#btn_apple:hover .icon {
+  fill: #fff;
+}
+
+#btn_apple:hover .icon {
+  filter: drop-shadow(0 0 6.5px rgba(0, 0, 0, 0.45));
+}
+
+#btn_ins {
+  position: relative;
+}
+
+#btn_ins svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 124px;
+  height: 124px;
+}
+
+#btn_ins .hover {
+  display: none;
+}
+
+#btn_ins :hover .default {
+  display: none;
+}
+
+#btn_ins :hover .hover {
+  display: block;
+}
+
+#btn_nike {
+  position: relative;
+}
+
+#btn_nike svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+}
+
+#btn_nike .hover {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#btn_nike .default {
+  opacity: 1;
+}
+
+#btn_nike:hover .hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#btn_nike:hover .default {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#btn_samsung { 
+  position: relative; 
+}
+#btn_samsung a { 
+  position: relative; 
+  display: inline-block; 
+}
+
+#btn_samsung .eclipse{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  z-index: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scale(0.001, 0.001);
+  transition: transform 300ms cubic-bezier(0.22,1,0.36,1);
+}
+
+#btn_samsung .eclipse path{
+  fill: #2D4F9E;
+}
+
+#btn_samsung:hover .eclipse{
+  transform: translate(-50%, -50%) rotate(0deg) scale(1, 1);
+}
+
+#btn_samsung .text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 124px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  fill: #2D4F9E;
+}
+
+#btn_samsung:hover .text{
+  fill: #FFFFFF;
+}
+
+
+#btn_facebook .text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 124px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  fill: #0967FF;
+}
+
+#btn_facebook:hover .text{
+  fill: #ffffff;
+}
+
+#btn_facebook { 
+  position: relative; 
+}
+
+#btn_facebook:hover .circle{
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+
+#btn_facebook .circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0.001, 0.001);
+  transition: transform 300ms cubic-bezier(0.22,1,0.36,1);
+}
+
+a#btn_spotify {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 10px 40px 0 40px;
+    background-color: #2ebd59;
+    border: 2px solid #2ebd59;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .5s;
+    z-index: 1;
+}
+
+a#btn_spotify::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
+    z-index: -1;
+}
+
+a#btn_spotify:hover::before {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+a#btn_spotify::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    z-index: -1;
+}
+
+a#btn_spotify:hover::after {
+    animation: wave 1.5s ease-out;
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0;
+    }
+}
+        
+        
+#btn_tesla svg {
+  width: 140px;
+}
+#btn_tesla:hover svg path {
+    fill: #cc0000;
+    transition: all 0.6s ease;
+}
+
+
+#twitter_button {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgb(40, 144, 241);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(40, 144, 241);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+}
+
+#btn_twitter{
+  text-decoration: none;
+}
+button span {
+  margin: 10px;
+}
+
+button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+button:hover {
+  color: #fff;
+  border: 1px solid rgb(40, 144, 241);
+}
+
+button:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(40, 144, 241);
+}
+
+
+a#btn_indiegogo {
+  display: inline-block;
+  position: relative;
+  margin:auto;
+  margin-top: 100px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #eb1478;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: -2px;
+  transition: all .2s;
+}
+
+.button_container a#btn_indiegogo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #eb1478;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.button_container a#btn_indiegogo:hover {
+    background-color: #c8106e;
+    transform: scale(1.05);
+}
