@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav{
+    display: flex;
+    display: inline-flex;
+    align-items: center;
+    gap: 107px;
+    margin: 20px 0px 20px 0px;
+}
+
+.nav a{
+    color: #000;
+    font-family: "futura-100", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav .chosen_header{
+    font-weight: 900;
+}
