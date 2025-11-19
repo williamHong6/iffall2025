@@ -1,0 +1,122 @@
+html,
+body {
+  height: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 80px;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.hotspot-matcha {
+  left: 16.5%;
+  top: 62%;
+  height: 120px;
+  width: 60px;
+  border-radius: 30px;
+}
+
+.hotspot-scoop {
+  left: 27.5%;
+  top: 63%;
+  width: 10px;
+  height: 150px;
+}
+
+.hotspot-teapot {
+  left: 43%;
+  top: 55%;
+  height: 240px;
+  width: 200px;
+  border-radius: 55px;
+}
+
+.hotspot-whisk {
+  left: 59%;
+  top: 62%;
+  height: 94px;
+  width: 60px;
+}
+
+.hotspot-bowl {
+  left: 70.7%;
+  top: 61.7%;
+  height: 75px;
+  width: 75px;
+  border-radius: 100px;
+}
+
+.hotspot-cloth {
+  left: 83.5%;
+  top: 62%;
+  height: 120px;
+  width: 75px;
+}
+
+
+.tooltip {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transform: translateY(-12px);
+
+  width: 500px;
+  padding-left: 18px; 
+
+  font-size: 12px;
+  line-height: 1.6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #000;
+}
+
+.tooltip h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+.hotspot:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px 0 40px;
+  }
+
+  .tooltip {
+    width: 80vw; /* 小屏就不要死 500px 了 */
+  }
+}
