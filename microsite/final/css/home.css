@@ -123,11 +123,115 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 20px 0 40px;
+
+.hotspot-matcha {
+  left: 16.5%;
+  top: 62%;
+  height: 40px;
+  width: 20px;
+  border-radius: 30px;
+  /* border: red SOLID 1PX; */
+}
+
+.hotspot-scoop {
+  left: 27.5%;
+  top: 63%;
+  width: 5px;
+  height: 60px;
+  /* border: red SOLID 1PX; */
+}
+
+.hotspot-teapot {
+  left: 43%;
+  top: 55%;
+  height: 100px;
+  width: 90px;
+  border-radius: 55px;
+    /* border: red SOLID 1PX; */
+}
+
+.hotspot-whisk {
+  left: 59%;
+  top: 62%;
+  height: 40px;
+  width: 25px;
+      /* border: red SOLID 1PX; */
+}
+
+.hotspot-bowl {
+  left: 70.7%;
+  top: 61.7%;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+      /* border: red SOLID 1PX; */
+}
+
+.hotspot-cloth {
+  left: 83.5%;
+  top: 62%;
+  height: 45px;
+  width: 30px;
+      /* border: red SOLID 1PX; */
+}
+
+}
+/* ---------- Mobile: hide inline tooltips and use fixed one ---------- */
+@media (max-width: 768px) {
+  /* 隐藏原来在 hotspot 内部的浮动 tooltip */
+  .hotspot .tooltip {
+    display: none !important;
+    opacity: 0 !important;
+    transform: none !important;
+    pointer-events: none !important;
   }
 
-  .tooltip {
-    width: 80vw;
+  /* 固定底部的统一 tooltip 容器样式 */
+  #fixed-tooltip {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 380px;
+    background: rgba(255,255,255,0.95);
+    color: #111;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    font-size: 13px;
+    line-height: 1.6;
+    z-index: 1200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    transform-origin: bottom center;
+  }
+
+  /* Visible 状态 */
+  #fixed-tooltip.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* 关闭按钮 */
+  #fixed-tooltip .ft-close {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.08);
+    cursor: pointer;
+  }
+
+  /* 如果内容很长，允许内部滚动（保持容器高度受控） */
+  #fixed-tooltip .ft-content {
+    max-height: 34vh;
+    overflow-y: auto;
   }
 }
+
