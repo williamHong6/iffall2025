@@ -1,7 +1,7 @@
 .history-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 32px 24px 64px;
+  padding: 32px 24px 32px;
 }
 
 .history-wrapper h2 {
@@ -67,7 +67,7 @@
 
 @media (max-width: 820px) {
   .history-wrapper {
-    padding: 24px 16px 48px;
+    padding: 24px 16px 0px;
   }
 
   .image-col,
